@@ -1,485 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="The Russian Family Official Discord Server"
-    >
-
-    <meta
-        name="theme-color"
-        content="#5865F2"
-    >
+    <meta name="description" content="The Russian Family Official Discord Server">
+    <meta name="theme-color" content="#5865F2">
 
     <title>The Russian Family</title>
 
-
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            color: #ffffff;
-
+            font-family: Arial, Helvetica, sans-serif;
             background:
-                radial-gradient(
-                    circle at 15% 10%,
-                    rgba(88, 101, 242, 0.20),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 85% 90%,
-                    rgba(114, 137, 218, 0.14),
-                    transparent 35%
-                ),
-                #070910;
-
-            min-height: 100vh;
-
+                radial-gradient(circle at 20% 10%, rgba(88, 101, 242, 0.14), transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(114, 137, 218, 0.10), transparent 30%),
+                #080a10;
+            color: #ffffff;
+            line-height: 1.6;
             overflow-x: hidden;
         }
-
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: -1;
-
-            background:
-                linear-gradient(
-                    rgba(255,255,255,0.012) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.012) 1px,
-                    transparent 1px
-                );
-
-            background-size:
-                45px 45px;
-
-            pointer-events: none;
-        }
-
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
-
-        /* =========================================
+        /* ================================
            NAVBAR
-        ========================================= */
+        ================================= */
 
         .navbar {
-
-            position: fixed;
-
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-
             z-index: 1000;
-
-            background:
-                rgba(7, 9, 16, 0.82);
-
-            backdrop-filter:
-                blur(18px);
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.08);
+            width: 100%;
+            background: rgba(8, 10, 16, 0.82);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
-
 
         .nav-inner {
-
-            width:
-                min(1150px, 100%);
-
-            min-height: 72px;
-
+            width: min(1150px, 100%);
             margin: auto;
-
-            padding:
-                0 20px;
+            min-height: 76px;
+            padding: 0 20px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            gap: 18px;
-        }
-
-
-        .brand {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            font-weight: 800;
-        }
-
-
-        .brand-logo {
-
-            width: 44px;
-            height: 44px;
-
-            border-radius: 50%;
-
-            object-fit: cover;
-
-            background: #151924;
-
-            border:
-                2px solid
-                rgba(255,255,255,0.12);
-        }
-
-
-        .brand-name {
-
-            font-size: 17px;
-        }
-
-
-        .brand-tagline {
-
-            margin-top: 3px;
-
-            color: #777f92;
-
-            font-size: 11px;
-        }
-
-
-        .nav-links {
-
-            display: flex;
-
-            align-items: center;
-
             gap: 20px;
         }
 
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(88, 101, 242, 0.7);
+        }
+
+        .brand-name {
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .brand-tagline {
+            color: #9da3b4;
+            font-size: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
 
         .nav-links a {
-
-            color: #939aaa;
-
+            color: #c7cbd6;
             font-size: 14px;
-
-            transition: 0.2s;
+            font-weight: 600;
+            transition: 0.25s ease;
         }
-
 
         .nav-links a:hover {
-
             color: #ffffff;
         }
-
 
         .discord-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: #5865F2;
-
-            color: #ffffff;
-
-            padding:
-                11px 18px;
-
-            border-radius: 9px;
-
+            background: #5865f2;
+            padding: 11px 18px;
+            border-radius: 10px;
             font-size: 14px;
-
-            font-weight: 800;
-
-            transition: 0.2s;
+            font-weight: 700;
+            transition: 0.25s ease;
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.25);
         }
-
 
         .discord-button:hover {
-
+            transform: translateY(-2px);
             background: #4752c4;
-
-            transform:
-                translateY(-2px);
         }
 
-
-        /* =========================================
+        /* ================================
            HERO
-        ========================================= */
+        ================================= */
 
         .hero {
-
-            min-height: 78vh;
-
-            padding:
-                145px 20px 80px;
-
+            min-height: 600px;
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             text-align: center;
-        }
+            padding: 80px 20px 100px;
 
+            background:
+                radial-gradient(circle at center, rgba(88, 101, 242, 0.18), transparent 40%),
+                linear-gradient(
+                    180deg,
+                    rgba(88, 101, 242, 0.05),
+                    transparent
+                );
+        }
 
         .hero-content {
-
-            width:
-                min(950px, 100%);
+            max-width: 850px;
         }
-
 
         .server-logo {
-
-            width: 130px;
-            height: 130px;
-
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
-
             object-fit: cover;
-
-            background: #151924;
-
-            border:
-                4px solid
-                rgba(255,255,255,0.10);
-
+            border: 4px solid rgba(255, 255, 255, 0.1);
             box-shadow:
-                0 0 55px
-                rgba(88,101,242,0.30);
-        }
+                0 0 0 8px rgba(88, 101, 242, 0.08),
+                0 20px 60px rgba(0, 0, 0, 0.5);
 
+            margin-bottom: 25px;
+        }
 
         .badge {
-
             display: inline-block;
+            padding: 7px 13px;
+            border-radius: 50px;
 
-            margin-top: 25px;
+            background: rgba(88, 101, 242, 0.12);
+            border: 1px solid rgba(88, 101, 242, 0.3);
 
-            padding:
-                7px 14px;
-
-            border-radius: 999px;
-
-            background:
-                rgba(88,101,242,0.12);
-
-            border:
-                1px solid
-                rgba(88,101,242,0.30);
-
-            color: #a0a8ff;
-
-            font-size: 12px;
-
+            color: #9ea8ff;
+            font-size: 11px;
             font-weight: 800;
-        }
+            letter-spacing: 1.5px;
 
+            margin-bottom: 18px;
+        }
 
         .hero h1 {
-
-            margin-top: 20px;
-
-            font-size:
-                clamp(46px, 8vw, 82px);
-
+            font-size: clamp(50px, 8vw, 90px);
             line-height: 1;
-
-            letter-spacing: -3px;
+            font-weight: 900;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
         }
-
 
         .hero h1 span {
-
-            color: #7289da;
+            color: #5865f2;
         }
-
 
         .hero-description {
-
             max-width: 650px;
-
-            margin:
-                20px auto 0;
-
-            color: #9299ab;
-
-            font-size: 17px;
-
-            line-height: 1.7;
+            margin: auto;
+            color: #a9afbf;
+            font-size: 18px;
         }
-
 
         .hero-buttons {
-
-            margin-top: 30px;
+            margin-top: 35px;
 
             display: flex;
-
-            align-items: center;
-
             justify-content: center;
-
-            gap: 12px;
-
+            align-items: center;
             flex-wrap: wrap;
+            gap: 12px;
         }
-
 
         .hero-button {
-
-            padding:
-                13px 21px;
-
-            border-radius: 9px;
-
-            font-weight: 800;
-
-            transition: 0.2s;
+            padding: 13px 20px;
+            border-radius: 11px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.25s ease;
         }
-
-
-        .join-button {
-
-            background: #5865F2;
-        }
-
-
-        .join-button:hover {
-
-            background: #4752c4;
-
-            transform:
-                translateY(-2px);
-        }
-
 
         .secondary-button {
-
-            background:
-                rgba(255,255,255,0.06);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.09);
         }
-
 
         .secondary-button:hover {
-
-            background:
-                rgba(255,255,255,0.10);
+            background: rgba(255, 255, 255, 0.09);
+            transform: translateY(-2px);
         }
 
+        .join-button {
+            background: #5865f2;
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+        }
 
-        /* =========================================
+        .join-button:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+
+        /* ================================
            BANNER
-        ========================================= */
+        ================================= */
 
         .banner-section {
-
-            width:
-                min(1150px, 100%);
-
+            width: min(1150px, 100%);
             margin: auto;
-
-            padding:
-                0 20px 90px;
+            padding: 0 20px 90px;
         }
 
-
         .banner {
-
             position: relative;
-
             width: 100%;
-
             height: 380px;
-
             overflow: hidden;
 
             border-radius: 20px;
-
             background: #10131d;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
 
             box-shadow:
-                0 20px 80px
-                rgba(0,0,0,0.35);
+                0 20px 80px rgba(0, 0, 0, 0.35);
         }
 
-
         .banner img {
-
             width: 100%;
             height: 100%;
-
             display: block;
 
             object-fit: cover;
+            object-position: center;
         }
 
-
         .banner-overlay {
-
             position: absolute;
-
             inset: 0;
 
             display: flex;
-
             align-items: flex-end;
 
             padding: 35px;
@@ -487,472 +274,300 @@
             background:
                 linear-gradient(
                     transparent 30%,
-                    rgba(0,0,0,0.88)
+                    rgba(0, 0, 0, 0.88)
                 );
         }
-
 
         .banner-title {
-
-            font-size: 34px;
-
-            font-weight: 800;
+            font-size: 32px;
+            font-weight: 900;
         }
-
 
         .banner-subtitle {
-
-            margin-top: 8px;
-
-            color: #b6bcc8;
-
+            color: #b8bdca;
             font-size: 14px;
+            margin-top: 3px;
         }
 
-
-        /* =========================================
+        /* ================================
            SECTIONS
-        ========================================= */
+        ================================= */
 
         .section {
-
-            width:
-                min(1150px, 100%);
-
+            width: min(1100px, 100%);
             margin: auto;
-
-            padding:
-                80px 20px;
+            padding: 90px 20px;
         }
 
-
-        .section-title {
-
+        .section-heading {
             text-align: center;
-
-            margin-bottom: 45px;
+            margin-bottom: 50px;
         }
 
-
-        .section-title h2 {
-
-            font-size: 39px;
+        .section-heading h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
         }
 
-
-        .section-title p {
-
-            margin-top: 10px;
-
-            color: #777f90;
-
-            font-size: 14px;
+        .section-heading p {
+            color: #9298a9;
+            font-size: 15px;
         }
 
+        /* ================================
+           LEADERSHIP
+        ================================= */
 
-        /* =========================================
-           STAFF GROUP
-        ========================================= */
-
-        .staff-group {
-
-            margin-bottom: 65px;
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
+        .leadership-card {
+            padding: 25px;
 
-        .staff-group:last-child {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.055),
+                    rgba(255, 255, 255, 0.025)
+                );
 
-            margin-bottom: 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+
+            transition: 0.3s ease;
         }
 
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(88, 101, 242, 0.45);
 
-        .group-title {
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25);
+        }
 
+        .leadership-title {
+            color: #5865f2;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            margin-bottom: 20px;
+        }
+
+        .person {
             display: flex;
-
             align-items: center;
+            gap: 14px;
 
-            justify-content: center;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
 
-            gap: 10px;
+        .person:last-child {
+            border-bottom: none;
+        }
 
-            margin-bottom: 22px;
+        .person img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+        }
 
-            font-size: 22px;
-
+        .person-name {
+            font-size: 15px;
             font-weight: 800;
         }
 
+        .person-username {
+            color: #858b9b;
+            font-size: 12px;
+        }
 
-        .staff-grid {
+        /* ================================
+           RULES
+        ================================= */
 
+        .rules-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(235px, 1fr)
-                );
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 18px;
         }
 
-
-        .staff-card {
-
-            position: relative;
-
-            padding:
-                30px 22px 26px;
-
-            text-align: center;
-
-            border-radius: 17px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.025)
-                );
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            overflow: hidden;
-
-            transition:
-                transform 0.25s,
-                border-color 0.25s,
-                background 0.25s;
-        }
-
-
-        .staff-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 3px;
-
-            background: #5865F2;
-        }
-
-
-        .staff-card:hover {
-
-            transform:
-                translateY(-7px);
-
-            border-color:
-                rgba(88,101,242,0.50);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(88,101,242,0.11),
-                    rgba(255,255,255,0.025)
-                );
-        }
-
-
-        .avatar-box {
-
-            width: 100px;
-            height: 100px;
-
-            margin: auto;
-
-            padding: 3px;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #5865F2,
-                    #7289da
-                );
-
-            box-shadow:
-                0 0 30px
-                rgba(88,101,242,0.20);
-        }
-
-
-        .staff-avatar {
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-            border-radius: 50%;
-
-            background: #151924;
-        }
-
-
-        .staff-name {
-
-            margin-top: 18px;
-
-            font-size: 21px;
-
-            font-weight: 800;
-
-            word-break: break-word;
-        }
-
-
-        .staff-role {
-
-            margin-top: 6px;
-
-            color: #7289da;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.6px;
-        }
-
-
-        .staff-username {
-
-            margin-top: 10px;
-
-            color: #777f90;
-
-            font-size: 12px;
-        }
-
-
-        /* =========================================
-           RULES
-        ========================================= */
-
-        .rules-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 16px;
-        }
-
-
-        .rule-card {
-
+        .rule {
             padding: 24px;
 
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.035);
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.025)
-                );
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            transition:
-                transform 0.2s,
-                border-color 0.2s,
-                background 0.2s;
+            transition: 0.25s ease;
         }
 
-
-        .rule-card:hover {
-
-            transform:
-                translateY(-4px);
-
-            border-color:
-                rgba(88,101,242,0.45);
-
-            background:
-                rgba(88,101,242,0.07);
+        .rule:hover {
+            background: rgba(255, 255, 255, 0.055);
+            transform: translateY(-3px);
         }
-
 
         .rule-number {
+            color: #5865f2;
+            font-size: 13px;
+            font-weight: 900;
 
-            color: #7289da;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            margin-bottom: 9px;
+            margin-bottom: 8px;
         }
 
-
-        .rule-card h3 {
-
-            font-size: 18px;
-
-            margin-bottom: 9px;
+        .rule h3 {
+            font-size: 17px;
+            margin-bottom: 7px;
         }
 
-
-        .rule-card p {
-
-            color: #858c9d;
-
-            font-size: 14px;
-
-            line-height: 1.6;
+        .rule p {
+            color: #9298a9;
+            font-size: 13px;
         }
 
-
-        /* =========================================
+        /* ================================
            CTA
-        ========================================= */
+        ================================= */
 
         .cta {
+            width: min(1100px, calc(100% - 40px));
+            margin: 40px auto 90px;
 
-            width:
-                min(900px, calc(100% - 40px));
-
-            margin:
-                30px auto 100px;
-
-            padding:
-                60px 25px;
+            padding: 65px 30px;
 
             text-align: center;
 
-            border-radius: 20px;
+            border-radius: 25px;
 
             background:
                 radial-gradient(
-                    circle at top,
-                    rgba(88,101,242,0.20),
-                    transparent 65%
+                    circle at center,
+                    rgba(88, 101, 242, 0.25),
+                    transparent 60%
                 ),
-                rgba(255,255,255,0.04);
+                rgba(255, 255, 255, 0.035);
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
 
         .cta h2 {
-
-            font-size: 36px;
+            font-size: 38px;
+            margin-bottom: 12px;
         }
-
 
         .cta p {
-
-            max-width: 600px;
-
-            margin:
-                12px auto 25px;
-
-            color: #858c9d;
-
-            line-height: 1.6;
+            color: #9ba1b1;
+            margin-bottom: 25px;
         }
 
-
         .cta-button {
-
             display: inline-block;
 
-            padding:
-                14px 24px;
+            background: #5865f2;
 
-            border-radius: 9px;
-
-            background: #5865F2;
+            padding: 14px 25px;
+            border-radius: 12px;
 
             font-weight: 800;
 
-            transition: 0.2s;
-        }
+            box-shadow:
+                0 12px 35px rgba(88, 101, 242, 0.3);
 
+            transition: 0.25s ease;
+        }
 
         .cta-button:hover {
-
             background: #4752c4;
-
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
-
-        /* =========================================
+        /* ================================
            FOOTER
-        ========================================= */
+        ================================= */
 
         footer {
-
-            padding:
-                30px 20px;
+            padding: 30px 20px;
 
             text-align: center;
 
-            color: #666d7d;
+            color: #696f7f;
+            font-size: 12px;
 
-            font-size: 13px;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
+        /* ================================
+           RESPONSIVE
+        ================================= */
 
-        /* =========================================
-           MOBILE
-        ========================================= */
+        @media (max-width: 900px) {
 
-        @media (max-width: 800px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
             .nav-links {
                 display: none;
             }
 
-            .rules-grid {
-                grid-template-columns: 1fr;
+            .banner {
+                height: 320px;
             }
-
         }
 
+        @media (max-width: 600px) {
 
-        @media (max-width: 700px) {
+            .nav-inner {
+                min-height: 68px;
+            }
 
             .brand-tagline {
                 display: none;
             }
 
+            .discord-button {
+                padding: 9px 13px;
+                font-size: 12px;
+            }
+
             .hero {
-                padding-top: 125px;
+                min-height: 540px;
+                padding-top: 60px;
             }
 
             .hero h1 {
-                letter-spacing: -1px;
+                font-size: 52px;
+                letter-spacing: -3px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-button {
+                width: 100%;
+                max-width: 300px;
             }
 
             .banner {
-                height: 250px;
+                height: 240px;
+                border-radius: 15px;
             }
 
             .banner-overlay {
@@ -960,73 +575,38 @@
             }
 
             .banner-title {
-                font-size: 25px;
+                font-size: 24px;
             }
 
-            .section-title h2 {
-                font-size: 31px;
+            .section {
+                padding: 65px 20px;
             }
 
-            .staff-grid {
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .rules-grid {
                 grid-template-columns: 1fr;
             }
 
+            .cta h2 {
+                font-size: 30px;
+            }
         }
-
-
-        @media (max-width: 450px) {
-
-            .nav-inner {
-                padding: 0 14px;
-            }
-
-            .brand-name {
-                font-size: 15px;
-            }
-
-            .discord-button {
-                padding:
-                    9px 12px;
-
-                font-size: 12px;
-            }
-
-            .server-logo {
-                width: 105px;
-                height: 105px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-description {
-                font-size: 15px;
-            }
-
-        }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================================
+    <!-- ================================
          NAVBAR
-    ========================================= -->
+    ================================= -->
 
     <header class="navbar">
-
         <div class="nav-inner">
 
-
-            <a
-                href="#top"
-                class="brand"
-            >
+            <a href="#top" class="brand">
 
                 <img
                     class="brand-logo"
@@ -1034,9 +614,7 @@
                     alt="Russian Family"
                 >
 
-
                 <div>
-
                     <div class="brand-name">
                         Russian Family
                     </div>
@@ -1044,14 +622,11 @@
                     <div class="brand-tagline">
                         One Family • One Team
                     </div>
-
                 </div>
 
             </a>
 
-
             <nav class="nav-links">
-
                 <a href="#leadership">
                     Leadership
                 </a>
@@ -1059,9 +634,7 @@
                 <a href="#rules">
                     Rules
                 </a>
-
             </nav>
-
 
             <a
                 href="https://discord.gg/ACQ35YGJw"
@@ -1072,25 +645,19 @@
                 Join Discord
             </a>
 
-
         </div>
-
     </header>
 
 
-
-    <!-- =========================================
-         HERO
-    ========================================= -->
-
     <main id="top">
 
+        <!-- ================================
+             HERO
+        ================================= -->
 
         <section class="hero">
 
-
             <div class="hero-content">
-
 
                 <img
                     class="server-logo"
@@ -1098,30 +665,21 @@
                     alt="Russian Family"
                 >
 
-
                 <div class="badge">
                     OFFICIAL DISCORD SERVER
                 </div>
-
 
                 <h1>
                     Russian <span>Family</span>
                 </h1>
 
-
                 <p class="hero-description">
-
                     One Family • One Team
-
                     <br>
-
                     Welcome to the official Russian Family community.
-
                 </p>
 
-
                 <div class="hero-buttons">
-
 
                     <a
                         href="#leadership"
@@ -1130,14 +688,12 @@
                         View Leadership
                     </a>
 
-
                     <a
                         href="#rules"
                         class="hero-button secondary-button"
                     >
                         Server Rules
                     </a>
-
 
                     <a
                         href="https://discord.gg/ACQ35YGJw"
@@ -1148,34 +704,25 @@
                         Join Discord
                     </a>
 
-
                 </div>
 
-
             </div>
-
 
         </section>
 
 
+        <!-- ================================
+             BANNER
+        ================================= -->
 
-        <!-- =========================================
-             GIF BANNER
-        ========================================= -->
-
-        <section
-            class="banner-section"
-            id="banner"
-        >
+        <section class="banner-section" id="banner">
 
             <div class="banner">
 
-
                 <img
-                    src="./standard_6.gif"
+                    src="https://cdn.discordapp.com/attachments/1375957447461834805/1486823535203848212/Picsart_26-03-26_21-21-15-872.png?ex=6aa706d2&is=6aa5b552&hm=613a8d492b60e1ca36c8876b58aadaa641954a4800b86cf479bf184c0635ab38"
                     alt="Russian Family Banner"
                 >
-
 
                 <div class="banner-overlay">
 
@@ -1185,7 +732,6 @@
                             Russian Family
                         </div>
 
-
                         <div class="banner-subtitle">
                             One Family • One Team
                         </div>
@@ -1194,29 +740,22 @@
 
                 </div>
 
-
             </div>
 
         </section>
 
 
-
-        <!-- =========================================
+        <!-- ================================
              LEADERSHIP
-        ========================================= -->
+        ================================= -->
 
-        <section
-            class="section"
-            id="leadership"
-        >
+        <section class="section" id="leadership">
 
-
-            <div class="section-title">
+            <div class="section-heading">
 
                 <h2>
                     Leadership
                 </h2>
-
 
                 <p>
                     The people responsible for Russian Family.
@@ -1225,282 +764,169 @@
             </div>
 
 
-
-            <!-- =====================================
-                 DEVELOPER
-            ====================================== -->
-
-            <div class="staff-group">
+            <div class="leadership-grid">
 
 
-                <div class="group-title">
+                <!-- DEVELOPER -->
 
-                    <span>
-                        💻
-                    </span>
+                <div class="leadership-card">
 
-                    Developer
+                    <div class="leadership-title">
+                        💻 Developer
+                    </div>
+
+                    <div class="person">
+
+                        <img
+                            src="https://cdn.discordapp.com/avatars/1131333331896774798/03fc78524a49bcdda5c904c5c5d30462.png?size=512"
+                            alt="SerPent"
+                        >
+
+                        <div>
+
+                            <div class="person-name">
+                                ᴿᵘˢˣᵗ SerPent
+                            </div>
+
+                            <div class="person-username">
+                                @serpent_officiel
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
-                <div class="staff-grid">
+                <!-- OWNERS -->
+
+                <div class="leadership-card">
+
+                    <div class="leadership-title">
+                        👑 Owners
+                    </div>
 
 
-                    <article class="staff-card">
+                    <div class="person">
 
+                        <img
+                            src="https://cdn.discordapp.com/avatars/1245704009335963769/36af364e0341b494c36a707b8bd00a37.png?size=512"
+                            alt="Daxk"
+                        >
 
-                        <div class="avatar-box">
+                        <div>
 
+                            <div class="person-name">
+                                DaxkXMhmd ❗
+                            </div>
 
-                            <img
-                                class="staff-avatar"
-                                src="https://cdn.discordapp.com/avatars/1131333331896774798/03fc78524a49bcdda5c904c5c5d30462.png?size=512"
-                                alt="SerPent"
-                            >
-
+                            <div class="person-username">
+                                @0tgy
+                            </div>
 
                         </div>
 
+                    </div>
 
-                        <div class="staff-name">
-                            ᴿᵘˢˣᵗ SerPent
+
+                    <div class="person">
+
+                        <img
+                            src="https://cdn.discordapp.com/avatars/278223699088506890/bcdbb685834e0f7c48248349b00f0ce4.png?size=512"
+                            alt="Machekl"
+                        >
+
+                        <div>
+
+                            <div class="person-name">
+                                ᴿᵘˢˣᵗ 𝑴𝑨𝑪𝑯𝑬𝑲𝑳
+                            </div>
+
+                            <div class="person-username">
+                                @macheekl
+                            </div>
+
                         </div>
 
-
-                        <div class="staff-role">
-                            Developer
-                        </div>
-
-
-                        <div class="staff-username">
-                            @serpent_officiel
-                        </div>
-
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =====================================
-                 OWNERS
-            ====================================== -->
-
-            <div class="staff-group">
-
-
-                <div class="group-title">
-
-                    <span>
-                        👑
-                    </span>
-
-                    Owners
+                    </div>
 
                 </div>
 
 
-                <div class="staff-grid">
+                <!-- HIGH RANKS -->
+
+                <div class="leadership-card">
+
+                    <div class="leadership-title">
+                        🛡️ High Ranks
+                    </div>
 
 
-                    <article class="staff-card">
+                    <div class="person">
 
+                        <img
+                            src="https://cdn.discordapp.com/avatars/1377953632892358746/eff2710a2cb23ccc12e42cd358aca7c8.png?size=512"
+                            alt="Miro"
+                        >
 
-                        <div class="avatar-box">
+                        <div>
 
+                            <div class="person-name">
+                                ᴿᵘˢˣᵗ MIRO 🥏
+                            </div>
 
-                            <img
-                                class="staff-avatar"
-                                src="https://cdn.discordapp.com/avatars/1245704009335963769/36af364e0341b494c36a707b8bd00a37.png?size=512"
-                                alt="Daxk"
-                            >
-
-
-                        </div>
-
-
-                        <div class="staff-name">
-                            DaxkXMhmd ❗
-                        </div>
-
-
-                        <div class="staff-role">
-                            Owner
-                        </div>
-
-
-                        <div class="staff-username">
-                            @0tgy
-                        </div>
-
-
-                    </article>
-
-
-
-                    <article class="staff-card">
-
-
-                        <div class="avatar-box">
-
-
-                            <img
-                                class="staff-avatar"
-                                src="https://cdn.discordapp.com/avatars/278223699088506890/bcdbb685834e0f7c48248349b00f0ce4.png?size=512"
-                                alt="Machekl"
-                            >
-
+                            <div class="person-username">
+                                @.x.18
+                            </div>
 
                         </div>
 
+                    </div>
 
-                        <div class="staff-name">
-                            ᴿᵘˢˣᵗ 𝑴𝑨𝑪𝑯𝑬𝑲𝑳
+
+                    <div class="person">
+
+                        <img
+                            src="https://cdn.discordapp.com/avatars/915590192067387522/5a7593af8c1dd292e8519db4c083ca04.png?size=512"
+                            alt="Oussema"
+                        >
+
+                        <div>
+
+                            <div class="person-name">
+                                ᴿᵘˢˣᵗ !𝐎𝐔𝐒𝐒𝐀𝐌𝐀 ♫☠
+                            </div>
+
+                            <div class="person-username">
+                                @oussamadabest
+                            </div>
+
                         </div>
 
-
-                        <div class="staff-role">
-                            Owner
-                        </div>
-
-
-                        <div class="staff-username">
-                            @macheekl
-                        </div>
-
-
-                    </article>
-
+                    </div>
 
                 </div>
 
             </div>
-
-
-
-            <!-- =====================================
-                 HIGH RANKS
-            ====================================== -->
-
-            <div class="staff-group">
-
-
-                <div class="group-title">
-
-                    <span>
-                        🛡️
-                    </span>
-
-                    High Ranks
-
-                </div>
-
-
-                <div class="staff-grid">
-
-
-                    <article class="staff-card">
-
-
-                        <div class="avatar-box">
-
-
-                            <img
-                                class="staff-avatar"
-                                src="https://cdn.discordapp.com/avatars/1377953632892358746/eff2710a2cb23ccc12e42cd358aca7c8.png?size=512"
-                                alt="Miro"
-                            >
-
-
-                        </div>
-
-
-                        <div class="staff-name">
-                            ᴿᵘˢˣᵗ MIRO 🥏
-                        </div>
-
-
-                        <div class="staff-role">
-                            High Rank
-                        </div>
-
-
-                        <div class="staff-username">
-                            @.x.18
-                        </div>
-
-
-                    </article>
-
-
-
-                    <article class="staff-card">
-
-
-                        <div class="avatar-box">
-
-
-                            <img
-                                class="staff-avatar"
-                                src="https://cdn.discordapp.com/avatars/915590192067387522/5a7593af8c1dd292e8519db4c083ca04.png?size=512"
-                                alt="Oussema"
-                            >
-
-
-                        </div>
-
-
-                        <div class="staff-name">
-                            ᴿᵘˢˣᵗ !𝐎𝐔𝐒𝐒𝐀𝐌𝐀 ♫☠
-                        </div>
-
-
-                        <div class="staff-role">
-                            High Rank
-                        </div>
-
-
-                        <div class="staff-username">
-                            @oussamadabest
-                        </div>
-
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
 
         </section>
 
 
-
-        <!-- =========================================
+        <!-- ================================
              RULES
-        ========================================= -->
+        ================================= -->
 
-        <section
-            class="section"
-            id="rules"
-        >
+        <section class="section" id="rules">
 
-
-            <div class="section-title">
+            <div class="section-heading">
 
                 <h2>
                     Server Rules
                 </h2>
 
-
                 <p>
-                    Respect the family and keep Russian Family clean.
+                    Respect the family and keep the community clean.
                 </p>
 
             </div>
@@ -1509,7 +935,7 @@
             <div class="rules-grid">
 
 
-                <div class="rule-card">
+                <div class="rule">
 
                     <div class="rule-number">
                         RULE 01
@@ -1521,14 +947,13 @@
 
                     <p>
                         Treat every member with respect.
-                        No insults, harassment or unnecessary conflicts.
+                        Harassment, insults and discrimination are not allowed.
                     </p>
 
                 </div>
 
 
-
-                <div class="rule-card">
+                <div class="rule">
 
                     <div class="rule-number">
                         RULE 02
@@ -1539,15 +964,13 @@
                     </h3>
 
                     <p>
-                        Do not spam messages, mentions,
-                        emojis or commands.
+                        Avoid spam, message flooding and unnecessary mentions.
                     </p>
 
                 </div>
 
 
-
-                <div class="rule-card">
+                <div class="rule">
 
                     <div class="rule-number">
                         RULE 03
@@ -1558,94 +981,86 @@
                     </h3>
 
                     <p>
-                        Advertising other servers,
-                        communities or services without permission
-                        is not allowed.
+                        Advertising other servers, websites or services
+                        without permission is not allowed.
                     </p>
 
                 </div>
 
 
-
-                <div class="rule-card">
+                <div class="rule">
 
                     <div class="rule-number">
                         RULE 04
                     </div>
 
                     <h3>
-                        Follow Discord Rules
+                        Keep Channels Clean
                     </h3>
 
                     <p>
-                        Everyone must follow Discord's
-                        Terms of Service and Community Guidelines.
+                        Use each channel for its intended purpose
+                        and keep conversations organized.
                     </p>
 
                 </div>
 
 
-
-                <div class="rule-card">
+                <div class="rule">
 
                     <div class="rule-number">
                         RULE 05
                     </div>
 
                     <h3>
-                        Respect Staff
+                        Listen to Staff
                     </h3>
 
                     <p>
-                        Follow reasonable instructions from
-                        the Russian Family staff team.
+                        Follow the instructions of the staff team
+                        and respect moderation decisions.
                     </p>
 
                 </div>
 
 
-
-                <div class="rule-card">
+                <div class="rule">
 
                     <div class="rule-number">
                         RULE 06
                     </div>
 
                     <h3>
-                        Use Channels Correctly
+                        Have Fun
                     </h3>
 
                     <p>
-                        Keep conversations in their correct
-                        channels and respect the purpose of each channel.
+                        Enjoy the community, meet new people
+                        and represent Russian Family positively.
                     </p>
 
                 </div>
 
-
             </div>
-
 
         </section>
 
 
-
-        <!-- =========================================
+        <!-- ================================
              CTA
-        ========================================= -->
+        ================================= -->
 
         <section class="cta">
-
 
             <h2>
                 Join Russian Family
             </h2>
 
-
             <p>
-                Become part of the Russian Family Discord community.
+                One Family • One Team
+                <br>
+                See you inside the server.
             </p>
-
 
             <a
                 href="https://discord.gg/ACQ35YGJw"
@@ -1656,42 +1071,27 @@
                 Join Discord
             </a>
 
-
         </section>
-
 
     </main>
 
 
-
-    <!-- =========================================
+    <!-- ================================
          FOOTER
-    ========================================= -->
+    ================================= -->
 
     <footer>
 
-        ©
-        <span id="year"></span>
-        Russian Family
-
-        <br><br>
-
-        One Family • One Team
+        © <span id="year"></span> Russian Family.
+        All rights reserved.
 
     </footer>
 
 
-
     <script>
-
-        document.getElementById(
-            "year"
-        ).textContent =
+        document.getElementById("year").textContent =
             new Date().getFullYear();
-
     </script>
 
-
 </body>
-
 </html>
